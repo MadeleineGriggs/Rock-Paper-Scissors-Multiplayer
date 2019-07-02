@@ -16,23 +16,47 @@ var choice = "";
 var username = "";
 var wins = "";
 var losses = "";
+var playerKey = "";
+$("#start-game").on("click", function(event) {
+    event.preventDefault();
+
+    name = $("#username").val().trim();
+
+    var userref = database.ref().push();
+    playerKey = userref.key;
+
+    var userName = ({
+        id: playerKey,
+    username: name
+    });
+
+    userref.set(userName);
+    console.log();
+})
 
 $(".choice-btn").on("click", function(event) {
 event.preventDefault();
 
-choice = $( this ).text()
+choice = $( this ).text();
+console.log(choice);
 
-database.ref().push({
-    username: name,
-    choice: userchoice,
-    wins: wins,
-    losses: losses
 
-    });
+database.ref().child(playerKey).update({
+    choice: choice,
+  });
 
+
+  console.log("The Key is: " + playerKey);
 });
 
 
 database.ref().on("child_added", function(snapshot) {
 
+    var sv = snapshot.val();
+
 })
+
+database.ref().on("value", function(snapshot) {
+
+
+});
