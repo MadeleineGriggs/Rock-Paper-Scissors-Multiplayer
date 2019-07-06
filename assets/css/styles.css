@@ -1,0 +1,46 @@
+:root {
+    --primary-teal: #0096a5;
+    --primary-teal-light: #56c7d6;
+    --primary-teal-dark: #006876;
+    --secondary-green: #aed581;
+    --secondary-green-light: #e1ffb1;
+    --secondary-green-dark: #7da453;
+    --mid-gray: #E2E2E2;
+    --light-gray: #F5F5F7;
+    --charcoal: #00171a;
+    --title-font: 'Rock Salt', cursive;
+    --body-font: 'Raleway', sans-serif;
+}
+.hidden {
+    display: none;
+}
+
+#username-modal {
+    width: 80vw;
+    margin: 1rem auto;
+    background-color: var(--light-gray);
+    padding: 2rem;
+}
+
+#username-modal h1{
+    font-family: var(--title-font);
+    color: var(--primary-teal-dark);
+    font-size: 4rem;
+    text-align: center;
+    margin: 2rem 0;
+    line-height: 5rem;
+}
+
+#username-modal h2{
+    font-family: var(--body-font);
+    color: var(--primary-teal-dark);
+    font-size: 3rem;
+    text-align: center;
+}
+
+#username-modal h3{
+    font-family: var(--body-font);
+    color: var(--primary-teal-dark);
+    font-size: 2rem;
+    text-align: center;
+}
