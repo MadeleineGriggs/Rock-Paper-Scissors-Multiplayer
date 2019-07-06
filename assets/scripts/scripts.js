@@ -15,25 +15,30 @@ var database = firebase.database();
 
 var localID = 0;
 var name = "";
-
+var roomID = "";
+var roomUserID = "";
 //When the document is ready, create a unique localID for the player. On the user disconnecting,
 // remove the localID.
 $(document).ready(function() {
     var ref = database.ref("players/").push();
     localID = ref.key;
-    database.ref("players/" + localID).onDisconnect().remove();
+    database.ref("players/" + localID).onDisconnect().remove(); 
 });
 
 // Lets the player join the room they have selected.
 function joinRoom (roomKey) {
     console.log("Joining room " + roomKey);
     var ref = database.ref("rooms/" + roomKey + "/players/");
-    ref.push(localID);
+    var ref2 = ref.push(localID);
+    roomUserID = ref2.key;
+    roomID = roomKey;
+    database.ref("rooms/" + roomID +"/players/" + roomUserID).onDisconnect().remove();
 }
 
 function deleteRoom (roomKey) {
     console.log("Deleting room " + roomKey);
     database.ref("rooms/" + roomKey).remove();
+
 }
 
 database.ref("players/").on('value', function(snapshot) {
