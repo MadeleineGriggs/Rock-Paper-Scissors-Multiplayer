@@ -27,6 +27,25 @@ $(document).ready(function() {
     database.ref("players/" + localID).onDisconnect().remove(); 
 });
 
+
+// Gets the player's username from the "#username" input and sends to the players section of the database.
+$("#create-player").on("click", function(event) {
+    event.preventDefault();
+    
+    name = $("#username").val().trim();
+    
+    database.ref('players/' + localID).set({
+        username: name,
+        wins: 0,
+        losses: 0,
+        ties: 0
+    });
+    $("#username-modal").addClass("hidden");
+    $("#room-modal").toggleClass("hidden");
+    $("#localUsername").text(name);
+});
+
+
 $(".choice-btn").on("click", function(event) {
     event.preventDefault();
 
@@ -157,6 +176,7 @@ database.ref("rooms/").on("value", function(snapshot) {
         // If there are less than 2 players in a game room, let another player join using
         // the join room button. If there are 2 players the join room button is not available.
         if (snapshot.child(key + "/players/").numChildren() < 2){
+            line.eq(1).empty();
             line.append(
                 $("<button>")
                 .attr("room-code", key)
@@ -181,29 +201,16 @@ database.ref("rooms/").on("value", function(snapshot) {
                 }
                 $("#rooms-wrapper").append(html);
             });
+     
             
-            //Removes the room by pressing the delete room button. Mostly just for ease of testing.
-            // function deleteRoom (roomKey) {
-            //     database.ref("rooms/" + roomKey).remove();
-            
-            // }
+    //Removes the room by pressing the delete room button. Mostly just for ease of testing.
+    // function deleteRoom (roomKey) {
+    //     database.ref("rooms/" + roomKey).remove();
+    
+    // }
 
-            // Gets the player's username from the "#username" input and sends to the players section of the database.
-    $("#create-player").on("click", function(event) {
-        event.preventDefault();
-        
-        name = $("#username").val().trim();
-        
-        database.ref('players/' + localID).set({
-            username: name,
-            wins: 0,
-            losses: 0,
-            ties: 0
-        });
-        $("#username-modal").addClass("hidden");
-        $("#room-modal").toggleClass("hidden");
-        $("#localUsername").text(name);
-    });
+
+
 
 //Gets the room name from the "#roomTitle" input and sends to the rooms section of the database.
 $("#create-room").on("click", function(event) {
