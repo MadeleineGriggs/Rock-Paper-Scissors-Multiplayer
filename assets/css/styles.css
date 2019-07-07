@@ -88,7 +88,7 @@
 
 #room-modal {
     width: 80vw;
-    margin: 1rem auto;
+    margin: 2rem auto;
     background-color: var(--light-gray);
     padding: 2rem;
     text-align: center;
@@ -153,11 +153,16 @@
     margin-bottom: 2rem;
 }
 
+#room-modal label {
+    font-family: var(--body-font);
+    color: var(--charcoal);
+}
 /* Styles related to the game modal */
 
 #game-modal {
+    
     width: 80vw;
-    margin: 1rem auto;
+    margin: 2rem auto;
     background-color: var(--light-gray);
     padding: 2rem;
     border-radius: 3px;
@@ -196,11 +201,14 @@
     margin-top: 1rem;
     margin-bottom: 2rem;
 }
+
+
 #game-modal p {
     margin-left: 3.5rem;
     line-height: 2rem;
     font-family: var(--body-font);
 }
+
 #game-modal p span {
     color: var(--secondary-green-dark);
     font-size: 1.5rem;

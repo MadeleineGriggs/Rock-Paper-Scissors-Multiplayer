@@ -151,8 +151,6 @@ function displayRemotePlayerUsername(remUserName) {
 }
 
 
-
-
 function displayCurrentScore(snapshot) {
     var localWins = snapshot.val().wins;
     var localTies = snapshot.val().ties;
