@@ -173,6 +173,7 @@ function updateGame(snapshot) {
         var keys = Object.keys(players);
         $("#curPlayers").text(name);
         if (playerCount == 2) {
+            
             // start playing the game
             localIndex = keys.indexOf(localID)
             remotePlayerIndex = keys[1-localIndex];
@@ -232,7 +233,7 @@ function updateGame(snapshot) {
             }
         } else {
             // wait for another player
-            $("#game-messages").text("waiting for another player to start the game.");
+            $("#game-messages").text("Game started. If there is only one player, you'll have to wait until someone else joins you.");
         }
     }
 }

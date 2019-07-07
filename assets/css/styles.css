@@ -187,6 +187,15 @@
     margin-bottom: 1rem;
 }
 
+#game-modal h4 {
+    margin-left: 3rem;
+    line-height: 2rem;
+    font-family: var(--body-font);
+    font-size: 1.15rem;
+    color: var(--charcoal);
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
 #game-modal p {
     margin-left: 3.5rem;
     line-height: 2rem;
