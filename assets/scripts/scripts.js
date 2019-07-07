@@ -79,6 +79,10 @@ database.ref("rooms/").on("value", function(snapshot) {
         if (snapshot.child(key + "/players/").numChildren() < 2){
             line.eq(1).empty();
             line.append(
+                $("<br>")
+            )
+            line.append(
+
                 $("<button>")
                 .attr("room-code", key)
                 .addClass("join-room")
@@ -146,6 +150,18 @@ function displayRemotePlayerUsername(remUserName) {
     })
 }
 
+
+
+
+function displayCurrentScore(snapshot) {
+    var localWins = snapshot.val().wins;
+    var localTies = snapshot.val().ties;
+    var localLosses = snapshot.val().losses;
+    $("#player-wins").text(localWins);
+    $("#player-ties").text(localTies);
+    $("#player-losses").text(localLosses);
+    console.log("losses: " + localTies + " wins: " + localWins + " losses: " + localLosses);
+}
 // The main game function.
 // If there aren't enough players in the game, it waits for the other player to join before evaluating any user choices.
 // When there are two players, you start playing. 
@@ -212,6 +228,7 @@ function updateGame(snapshot) {
                     }
                     return player;
                 });
+                database.ref("players/" + localID).on("value", displayCurrentScore);
             }
         } else {
             // wait for another player
@@ -220,12 +237,6 @@ function updateGame(snapshot) {
     }
 }
 
-
-
-
-
-
-     
             
     //Removes the room by pressing the delete room button. Mostly just for ease of testing.
     // function deleteRoom (roomKey) {

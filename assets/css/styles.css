@@ -15,17 +15,20 @@
     display: none;
 }
 
+/* Styles related to the username modal section */
 #username-modal {
     width: 80vw;
     margin: 1rem auto;
     background-color: var(--light-gray);
     padding: 2rem;
+    text-align: center;
+    border-radius: 3px;
 }
 
 #username-modal h1{
     font-family: var(--title-font);
     color: var(--primary-teal-dark);
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
     margin: 2rem 0;
     line-height: 5rem;
@@ -34,13 +37,189 @@
 #username-modal h2{
     font-family: var(--body-font);
     color: var(--primary-teal-dark);
-    font-size: 3rem;
+    font-size: 2rem;
     text-align: center;
 }
 
 #username-modal h3{
     font-family: var(--body-font);
     color: var(--primary-teal-dark);
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
+}
+
+#username-wrapper {
+    margin-top: 2rem;
+}
+
+#username-wrapper label {
+    font-family: var(--body-font);
+    color: var(--charcoal);
+}
+
+#username-wrapper button {
+    font-family: var(--body-font);
+    color: var(--charcoal);
+    background-color: var(--secondary-green);
+    border: 1px solid var(--secondary-green-dark);
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+#username-wrapper input[type=text] {
+    background-color: white;
+    font-family: var(--body-font);
+    padding: 5px 10px;
+    color: var(--charcoal);
+    font-size: 1rem;
+    border: 1px solid var(--mid-gray);
+    border-radius: 3px;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+}
+
+#username-wrapper input[type=text]:focus {
+    outline-color: var(--primary-teal);
+}
+
+
+/* Styles related to the room modal section */
+
+#room-modal {
+    width: 80vw;
+    margin: 1rem auto;
+    background-color: var(--light-gray);
+    padding: 2rem;
+    text-align: center;
+    border-radius: 3px;
+}
+
+#room-modal h1 {
+    font-family: var(--title-font);
+    color: var(--primary-teal-dark);
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+#room-modal h3{
+    font-family: var(--body-font);
+    color: var(--primary-teal-dark);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+#room-modal input[type=text] {
+    background-color: white;
+    font-family: var(--body-font);
+    padding: 5px 10px;
+    color: var(--charcoal);
+    font-size: 1rem;
+    border: 1px solid var(--mid-gray);
+    border-radius: 3px;
+    margin-left: 0.5rem;
+    margin-right: 1rem;
+}
+
+#room-modal input[type=text]:focus {
+    outline-color: var(--primary-teal);
+}
+
+#room-modal button {
+    font-family: var(--body-font);
+    color: var(--charcoal);
+    background-color: var(--secondary-green);
+    border: 1px solid var(--secondary-green-dark);
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+
+#room-container h3 {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.room-line {
+    color: var(--primary-teal);
+    font-family: var(--body-font);
+    font-size: 1.25rem;
+}
+
+.room-line button {
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Styles related to the game modal */
+
+#game-modal {
+    width: 80vw;
+    margin: 1rem auto;
+    background-color: var(--light-gray);
+    padding: 2rem;
+    border-radius: 3px;
+}
+
+#game-modal h1 {
+    font-family: var(--title-font);
+    color: var(--primary-teal-dark);
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+#game-modal h2 {
+    font-family: var(--body-font);
+    color: var(--primary-teal-dark);
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+#game-modal h3 {
+    font-family: var(--body-font);
+    color: var(--primary-teal-dark);
+    font-size: 1.5rem;
+    margin-left: 3rem;
+    margin-bottom: 1rem;
+}
+
+#game-modal p {
+    margin-left: 3.5rem;
+    line-height: 2rem;
+    font-family: var(--body-font);
+}
+#game-modal p span {
+    color: var(--secondary-green-dark);
+    font-size: 1.5rem;
+}
+
+#game-messages {
+    color: var(--secondary-green-dark)
+}
+
+#game-modal div {
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    font-family: var(--body-font);
+}
+
+#game-modal button {
+    font-family: var(--body-font);
+    color: var(--charcoal);
+    background-color: var(--secondary-green);
+    border: 1px solid var(--secondary-green-dark);
+    font-size: 2rem;
+    padding: 10px 15px;
+    border-radius: 3px;
+}
+
+.button-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
 }
